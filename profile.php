@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/includes/header.php';
 $id = (int)($_GET['id'] ?? $_SESSION['user_id'] ?? 0);
 $stmt = $pdo->prepare('SELECT id,username,fullname,bio,avatar,created_at FROM users WHERE id=?');
 $stmt->execute([$id]);
@@ -36,4 +36,4 @@ $posts = $posts->fetchAll();
     <?php endforeach; ?>
   </div>
 </div>
-<?php require_once __DIR__ . '/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
