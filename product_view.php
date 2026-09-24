@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/includes/header.php';
 $id = (int)($_GET['id'] ?? 0);
 $p = $pdo->prepare('SELECT p.*, u.username FROM products p LEFT JOIN users u ON u.id=p.user_id WHERE p.id=?');
 $p->execute([$id]); $prod = $p->fetch();
@@ -66,4 +66,4 @@ if (isset($_SESSION['user_id'])){
 
   </div>
 </div>
-<?php require_once __DIR__ . '/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
