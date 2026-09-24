@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/includes/header.php';
 // show posts from all users, newest first
 $posts = $pdo->query('SELECT p.*, u.username, u.avatar FROM posts p JOIN users u ON u.id=p.user_id ORDER BY p.created_at DESC LIMIT 50')->fetchAll();
 ?>
@@ -31,4 +31,4 @@ $posts = $pdo->query('SELECT p.*, u.username, u.avatar FROM posts p JOIN users u
     </div>
   <?php endforeach; ?>
 </div></div>
-<?php require_once __DIR__ . '/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
