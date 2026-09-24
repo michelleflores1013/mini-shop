@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/includes/header.php';
 if (!isset($_SESSION['user_id'])) { header('Location: login.php'); exit; }
 $uid = $_SESSION['user_id'];
 $u = $pdo->prepare('SELECT username,fullname,bio,avatar FROM users WHERE id=?'); $u->execute([$uid]); $user = $u->fetch();
