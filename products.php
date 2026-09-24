@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/includes/header.php';
 $stmt = $pdo->query('SELECT * FROM products ORDER BY created_at DESC');
 $products = $stmt->fetchAll();
 ?>
@@ -18,4 +18,4 @@ $products = $stmt->fetchAll();
     </div>
   <?php endforeach; ?>
 </div>
-<?php require_once __DIR__ . '/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
