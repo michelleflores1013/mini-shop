@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/header.php';
+require_once __DIR__ . '/includes/header.php';
 $id = (int)($_GET['id'] ?? 0);
 $c = $pdo->prepare('SELECT * FROM comments WHERE id=?'); $c->execute([$id]); $row = $c->fetch();
 if (!$row) { header('Location: index.php'); exit; }
